@@ -1,0 +1,19 @@
+--
+-- Структура таблицы `city`
+--
+
+CREATE TABLE `city` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `name` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `region_id` int(10) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+
+-- Структура таблицы `region`
+--
+
+CREATE TABLE `region` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `name` varchar(150) COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;

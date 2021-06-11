@@ -1,3 +1,7 @@
+<!-- 
+    Данный скрипт берет полученные данные и загружает их в базу данных MySql в таблицы city и region соответственно
+ -->
+
 <?php
 
 // данные для подключения к бд
@@ -17,6 +21,7 @@ $filename = "regions.txt";
 $data = file_get_contents($filename);
 $regions_list = unserialize($data);
 
+// Добавление в базу данных
 foreach ($regions_list as $item)
 {
     $id = $item["region_id"];
@@ -35,7 +40,7 @@ $filename = "cities.txt";
 $data = file_get_contents($filename);
 $cities_list = unserialize($data);
 
-
+// Добавление в базу данных
 foreach ($cities_list as $item)
 {
 
@@ -48,6 +53,9 @@ foreach ($cities_list as $item)
 
 mysqli_close($link);
 
+
+
+// Добавление региона
 function insert_region($link, $id, $name)
 {
     $query = "INSERT INTO `region`(`id`, `name`) VALUES ({$id},'{$name}')";
@@ -55,6 +63,7 @@ function insert_region($link, $id, $name)
 
 }
 
+// Добавление города
 function insert_city($link, $name, $region_id)
 {
     $query = "INSERT INTO `city`(`name`, `region_id`) VALUES ('{$name}',{$region_id})";
