@@ -1,0 +1,11 @@
+{
+    "name": "denis/parser",
+    "require": {
+        "electrolinux/phpquery": "^0.9.6"
+    },
+    "autoload" : {
+        "psr-4": {
+            "parser\\" : "src\\"
+        }
+    }
+}
